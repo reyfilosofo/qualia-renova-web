@@ -1,4 +1,9 @@
-# QUALIA / RENOVA
+# QUALIA / RENOVA — sitio
 
-Sitio del libro vivo. Landing + experiencia táctil + Stripe $100 MXN.
-SERESARTE / Renova Press / 2026.
+Landing + libro vivo HTML.
+
+- `/` landing comercial
+- `/libro` experiencia táctil + Generador de Qualia
+- Stripe $100 MXN
+
+SERESARTE · Renova Press · 2026

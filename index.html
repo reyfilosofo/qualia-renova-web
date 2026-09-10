@@ -3,58 +3,146 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#12051a">
+<meta name="theme-color" content="#07040a">
+<meta name="description" content="QUALIA / ℜENOVA — El mundo antes del nombre. Artbook poético · caligráfico · científico. Edición HTML nativa, 80 láminas, Generador de Qualia. $100 MXN. SERESARTE · ℜenova Press · 2026.">
 <title>QUALIA / ℜENOVA — El mundo antes del nombre</title>
-<meta name="description" content="Artbook poético · caligráfico · científico. Edición HTML nativa con generador de qualia. SERESARTE · 2026.">
 <style>
-:root{--bg:#0b0512;--cream:#f3ecd8;--acid:#cbff13;--cyan:#13ceb9;--line:rgba(255,255,255,.14)}
-*{box-sizing:border-box}html,body{margin:0;background:#07040a;color:var(--cream);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-a{color:inherit;text-decoration:none}
-.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:14px 22px;background:linear-gradient(to bottom,rgba(7,4,10,.96),rgba(7,4,10,.5));backdrop-filter:blur(16px)}
-.brand{font-weight:950;margin-right:auto}.brand i{font-style:normal;color:var(--acid)}
-.nav a.buy{background:var(--acid);color:#12051a;font-weight:900;padding:10px 16px;border-radius:999px;font-size:12px}
-.nav a.ghost{border:1px solid var(--line);padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800}
-.hero{min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:48px 7vw 80px;background:radial-gradient(circle at 70% 40%,#3a1450 0,#1a0824 38%,#07040a 72%)}
-.kicker{font:800 11px ui-monospace,monospace;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}
-h1{font-size:clamp(46px,8vw,108px);line-height:.82;letter-spacing:-.05em;margin:16px 0 22px;font-weight:950}
+:root{
+  --bg:#07040a;--ink:#f3ecd8;--acid:#cbff13;--cyan:#13ceb9;--pink:#ff3abf;
+  --violet:#6b3cff;--coral:#ff4165;--muted:#b7adc2;--line:rgba(255,255,255,.14);
+  --safeT:env(safe-area-inset-top,0px);--safeB:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}html,body{margin:0;background:#050308;color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
+.nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;padding:calc(var(--safeT) + 12px) 22px 12px;background:rgba(5,3,8,.72);backdrop-filter:blur(18px)}
+.brand{font-weight:950;letter-spacing:.01em;margin-right:auto}.brand i{font-style:normal;color:var(--acid)}
+.nav .ghost,.nav .buy{min-height:40px;display:grid;place-items:center;padding:0 16px;border-radius:999px;font:800 11px/1 ui-sans-serif,sans-serif;letter-spacing:.04em}
+.nav .ghost{border:1px solid var(--line)}.nav .buy{background:var(--acid);color:#100519}
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:4vw;padding:48px 7vw 72px;background:radial-gradient(70% 80% at 78% 42%,#4a1462 0%,#1a0828 36%,#07040a 68%);overflow:hidden}
+.kicker{font:800 11px ui-monospace,monospace;letter-spacing:.18em;color:var(--cyan);text-transform:uppercase}
+h1{font-size:clamp(52px,9vw,118px);line-height:.8;letter-spacing:-.055em;margin:14px 0 22px;font-weight:950}
 h1 span{color:var(--acid)}
-.lead{font-size:clamp(16px,2vw,22px);line-height:1.45;color:#c9bfd4;max-width:28ch}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.cta a{min-height:48px;display:grid;place-items:center;padding:0 20px;border-radius:999px;font-weight:900}
-.cta .main{background:var(--acid);color:#12051a}.cta .alt{border:1px solid var(--line)}
-.orb{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,transparent 38%,rgba(203,255,19,.18) 39%,transparent 40%),radial-gradient(circle at 50% 50%,transparent 52%,rgba(19,206,185,.2) 53%,transparent 54%),radial-gradient(circle at 50% 50%,transparent 66%,rgba(255,65,101,.22) 67%,transparent 68%),radial-gradient(circle at 40% 40%,#49145c,#12051a 70%);box-shadow:0 40px 120px rgba(107,60,255,.28);animation:spin 28s linear infinite}
+.lead{font-size:clamp(17px,2vw,24px);line-height:1.4;color:#d4cadc;max-width:22ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.cta a{min-height:50px;display:inline-flex;align-items:center;gap:8px;padding:0 22px;border-radius:999px;font-weight:900}
+.cta .main{border:1px solid rgba(255,255,255,.28);background:rgba(0,0,0,.25)}
+.cta .buy{background:var(--acid);color:#100519}
+.orbWrap{display:grid;place-items:center;min-height:52vh}
+.orb{width:min(46vw,560px);aspect-ratio:1;border-radius:50%;background:
+  radial-gradient(circle at 50% 50%,transparent 36%,rgba(203,255,19,.35) 37%,transparent 38%),
+  radial-gradient(circle at 50% 50%,transparent 50%,rgba(19,206,185,.4) 51%,transparent 52.2%),
+  radial-gradient(circle at 50% 50%,transparent 64%,rgba(255,58,191,.38) 65%,transparent 66.2%),
+  radial-gradient(circle at 42% 38%,#5a1a72,#12051a 72%);
+  box-shadow:0 40px 140px rgba(107,60,255,.32);animation:spin 36s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:40px 7vw 80px}
-.card{border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(255,255,255,.02)}
-.card b{display:block;color:var(--acid);margin-bottom:8px;letter-spacing:.08em;font:800 11px ui-monospace,monospace}
-.foot{padding:28px 7vw 48px;color:#8a8094;font:10px/1.6 ui-monospace,monospace;border-top:1px solid var(--line)}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:28px}.orb{max-width:280px;margin:0 auto}}
+.section{padding:84px 7vw}
+.previewHead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.previewHead h2{font-size:clamp(28px,4vw,48px);line-height:.95;margin:0;letter-spacing:-.04em}
+.eyebrow{font:800 11px ui-monospace,monospace;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:0 0 10px}
+.quote{font-size:clamp(22px,3vw,36px);line-height:1.15;max-width:18ch;letter-spacing:-.03em}
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.toc a{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;padding:16px 8px;border-bottom:1px solid var(--line)}
+.toc b{color:var(--pink);font:900 12px ui-monospace,monospace}
+.toc span{font-size:15px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{border:1px solid var(--line);border-radius:20px;padding:26px;background:rgba(255,255,255,.025)}
+.card h3{margin:0 0 10px;font-size:28px;letter-spacing:-.04em}
+.card p{color:var(--muted);line-height:1.6}
+.buyBlock{background:linear-gradient(180deg,#160820,#0a0610);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price{font-size:clamp(48px,8vw,92px);font-weight:950;letter-spacing:-.06em;margin:8px 0}
+.price small{font-size:.28em;letter-spacing:.08em;color:var(--acid)}
+.author{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:center}
+.authorMark{font-size:clamp(36px,5vw,64px);line-height:.86;font-weight:950;letter-spacing:-.05em}
+.authorMark i{color:var(--acid);font-style:normal}
+.details{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.foot{padding:28px 7vw calc(var(--safeB) + 36px);color:#8a8094;font:11px/1.7 ui-monospace,monospace;border-top:1px solid var(--line)}
+@media(max-width:860px){
+  .hero,.split,.author,.details,.toc{grid-template-columns:1fr}
+  .hero{padding:28px 22px 56px}.section{padding:56px 22px}
+  .orb{width:min(78vw,360px)}.nav .ghost{display:none}
+}
 </style>
 </head>
 <body>
 <header class="nav">
   <div class="brand">QUALIA / <i>ℜENOVA</i></div>
   <a class="ghost" href="libro.html">LIBRO VIVO</a>
-  <a class="buy" href="https://buy.stripe.com/8x2fZh8e4cYu5F98QabQY0r" target="_blank" rel="noopener">COMPRAR · $100 MXN</a>
+  <a class="buy" href="https://buy.stripe.com/5kQ14n2TKbUq5F93vQbQY0u" target="_blank" rel="noopener">COMPRAR · $100 MXN</a>
 </header>
 <section class="hero">
   <div>
-    <div class="kicker">SERESARTE · ℜenova Press · 2026</div>
+    <div class="kicker">SERESARTE · ℜENOVA PRESS · 2026</div>
     <h1>EL MUNDO<br>ANTES DEL<br><span>NOMBRE</span></h1>
-    <p class="lead">Artbook poético · caligráfico · científico. Edición para luz RGB, gesto, posimagen, memoria y perturbación.</p>
+    <p class="lead">Artbook poético · caligráfico · científico. Una edición concebida para luz RGB, gesto, posimagen, memoria y perturbación.</p>
     <div class="cta">
       <a class="main" href="libro.html">ENTRAR A LA EXPERIENCIA</a>
-      <a class="alt" href="https://buy.stripe.com/8x2fZh8e4cYu5F98QabQY0r" target="_blank" rel="noopener">ADQUIRIR EDICIÓN · $100 MXN</a>
+      <a class="buy" href="https://buy.stripe.com/5kQ14n2TKbUq5F93vQbQY0u" target="_blank" rel="noopener">ADQUIRIR EDICIÓN · $100 MXN</a>
     </div>
   </div>
-  <div class="orb" aria-hidden="true"></div>
+  <div class="orbWrap"><div class="orb" aria-hidden="true"></div></div>
 </section>
-<section class="grid">
-  <div class="card"><b>FOCO</b>Una lámina = un golpe. Swipe, pellizco, doble toque y rueda.</div>
-  <div class="card"><b>FLUJO</b>Scroll vertical nativo con snap por las 80 estaciones.</div>
-  <div class="card"><b>GENERADOR</b>Ocho motores perceptivos. Heurística artística, no clínica.</div>
-  <div class="card"><b>CAUSA</b>ℜenova 1×1. Precio de entrada $100 MXN. El HTML es el libro.</div>
+<section class="section">
+  <div class="previewHead">
+    <div>
+      <p class="eyebrow">VISTA PREVIA CURADA</p>
+      <p class="quote">El libro no está dentro de la pantalla. La pantalla forma parte del libro.</p>
+    </div>
+    <div style="font:800 12px ui-monospace,monospace;color:#8d8298">01 / 08</div>
+  </div>
+  <nav class="toc">
+    <a href="libro.html"><b>01</b><span>QUALIA / ℜENOVA</span></a>
+    <a href="libro.html"><b>02</b><span>ESTO ES / ESTO NO ES</span></a>
+    <a href="libro.html"><b>09</b><span>MIRA EL CENTRO</span></a>
+    <a href="libro.html"><b>15</b><span>NINGÚN DIOS EN Φ</span></a>
+    <a href="libro.html"><b>21</b><span>LA HERIDA COMO INSTRUMENTO</span></a>
+    <a href="libro.html"><b>28</b><span>COLOR</span></a>
+    <a href="libro.html"><b>36</b><span>VIDA NO ES CONSCIENCIA</span></a>
+    <a href="libro.html"><b>38</b><span>MEMORIA SIN SINAPSIS</span></a>
+  </nav>
 </section>
-<footer class="foot">© 2026 Carlos Jonathan González Rodríguez / SERESARTE · ℜenova Press. Lectura personal. El generador de qualia no fabrica consciencia ni mide qualia.</footer>
+<section class="section split">
+  <article class="card">
+    <p class="eyebrow">ESTATUTO EPISTÉMICO</p>
+    <h3>HIPÓTESIS <i style="color:var(--acid);font-style:normal">NO ES</i> HECHO</h3>
+    <p>La obra distingue experiencia estética, hipótesis filosófica, inferencia científica y resultados publicados. No diagnostica, no prescribe y no se presenta como paper clínico.</p>
+  </article>
+  <article class="card">
+    <p class="eyebrow">GENERADOR DE QUALIA*</p>
+    <h3>Perturba la imagen. No la contemples solamente.</h3>
+    <p>Ocho motores: posimagen, interferencia, manifold, perturbación, memoria, bucle, futuros ℜ y mix. Dispositivo artístico-operativo: no afirma fabricar consciencia ni medir qualia.</p>
+    <p style="margin-top:18px"><a href="libro.html#lab=mix" style="display:inline-flex;min-height:44px;padding:0 16px;border-radius:999px;background:var(--acid);color:#100519;font-weight:900">ABRIR GENERADOR</a></p>
+  </article>
+</section>
+<section class="section buyBlock">
+  <p class="eyebrow">NUEVO ESTADO</p>
+  <h2 style="font-size:clamp(32px,5vw,64px);line-height:.9;letter-spacing:-.045em;margin:0 0 16px">EDICIÓN DEFINITIVA · RADICAL × PANTALLA</h2>
+  <p style="max-width:62ch;color:#c9bfd4;line-height:1.6">80 láminas + experiencia HTML nativa + Generador de Qualia. Licencia personal de lectura. Producto digital. Pago único.</p>
+  <div class="price">$100 <small>MXN</small></div>
+  <div class="cta">
+    <a class="buy" href="https://buy.stripe.com/5kQ14n2TKbUq5F93vQbQY0u" target="_blank" rel="noopener">COMPRAR AHORA</a>
+    <a class="main" href="libro.html">LEER EN EL SITIO</a>
+  </div>
+</section>
+<section class="section author">
+  <div class="authorMark">REY FILÓSOFO<br><i>by SERESARTE</i></div>
+  <div>
+    <p class="eyebrow">SOBRE EL AUTOR</p>
+    <p style="font-size:18px;line-height:1.55;color:#d7cedc">Carlos Jonathan González Rodríguez es filósofo, escritor, creador y gestor cultural. Su trabajo articula filosofía, arte, consciencia, complejidad, tecnología y experimentación editorial. Es fundador de SERESARTE y creador de ℜenova.</p>
+  </div>
+</section>
+<section class="section">
+  <p class="eyebrow">IDENTIDAD EN MOVIMIENTO</p>
+  <h2 style="font-size:clamp(28px,4vw,46px);letter-spacing:-.04em">DETALLES DE EDICIÓN</h2>
+  <div class="details">
+    <article class="card"><h3>Formato</h3><p>Obra concebida para monitor o tablet. RGB, página fija, experiencia táctil y visual.</p></article>
+    <article class="card"><h3>Interacción</h3><p>Foco con swipe y pellizco. Flujo con scroll-snap. Laboratorio perceptivo de 8 modos.</p></article>
+    <article class="card"><h3>Compartir</h3><p>El enlace comercial se comparte; el archivo adquirido conserva licencia personal de lectura.</p></article>
+  </div>
+</section>
+<footer class="foot">
+  © 2026 Carlos Jonathan González Rodríguez / SERESARTE · ℜenova Press · México.<br>
+  Lectura personal. No redistribución, scraping, reventa ni reimpresión no autorizada.<br>
+  “Generador de qualia” es denominación artístico-operativa.
+</footer>
 </body>
 </html>
