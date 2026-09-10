@@ -1,2 +1,4 @@
-# qualia-renova-web
-QUALIA / ℜENOVA — sitio del libro vivo. SERESARTE · ℜenova Press · 2026
+# QUALIA / RENOVA
+
+Sitio del libro vivo. Landing + experiencia táctil + Stripe $100 MXN.
+SERESARTE / Renova Press / 2026.
