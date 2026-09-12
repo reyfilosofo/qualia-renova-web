@@ -1,0 +1,1 @@
+This public repository is being used only to serve visual email assets for Gmail rendering.
