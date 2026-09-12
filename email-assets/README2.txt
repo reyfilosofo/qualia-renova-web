@@ -1,0 +1,1 @@
+Assets used by HTML email only.
