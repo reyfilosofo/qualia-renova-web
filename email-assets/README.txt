@@ -1,0 +1,1 @@
+Public visual assets used only by the HTML email delivery for 𝒬ualia ℛenovae. No delivery page is required.
