@@ -1,0 +1,1 @@
+Remote assets support inline rendering in email; PDFs remain on Google Drive.
