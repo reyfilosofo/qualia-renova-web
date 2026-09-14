@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=yes">
+<meta name="theme-color" content="#08040d">
+<meta name="author" content="Carlos Jonathan González Rodríguez">
+<title>FALTAN AÚN PALABRAS POR LIBERAR · XR</title>
+<style>
+:root{--bg:#08040d;--ink:#f2ebdd;--acid:#d5ff00;--pink:#ff2c8b;--cyan:#48e2ff;--violet:#6b3cff;--rust:#9e3428;--line:rgba(242,235,221,.18);--safeT:env(safe-area-inset-top,0px);--safeB:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;overscroll-behavior:none}
+body{min-height:100svh;overflow:hidden;background:radial-gradient(circle at 12% 5%,rgba(107,60,255,.18),transparent 32%),radial-gradient(circle at 92% 84%,rgba(255,44,139,.11),transparent 32%),#08040d}
+button,input{font:inherit}
+.shell{height:100svh;padding:calc(var(--safeT) + 10px) 10px calc(var(--safeB) + 10px);display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:8px}
+.mast{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;min-height:44px}
+.brand{font-weight:950;line-height:.78;letter-spacing:-.055em;font-size:clamp(22px,5.1vw,62px);text-transform:uppercase}.brand span,.brand strong{display:block}.brand strong{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--pink)}
+.meta{padding-top:4px;font:900 9px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:var(--acid);white-space:nowrap}
+.controls{display:grid;gap:6px}
+.modeBar{display:flex;gap:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:1px 0}.modeBar::-webkit-scrollbar{display:none}
+.mode{flex:0 0 auto;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025);color:#bdb1c1;min-height:34px;padding:0 10px;font:900 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em;cursor:pointer}.mode.active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.paramBar{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.paramBar label{display:block;border:1px solid var(--line);border-radius:10px;padding:6px 8px;color:#96899b;font:900 7px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}.paramBar output{float:right;color:var(--acid)}.paramBar input{display:block;width:100%;height:16px;margin:4px 0 0;accent-color:var(--acid)}
+.machine{position:relative;min-height:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#20102b,#08050b 64%);isolation:isolate;box-shadow:0 26px 90px rgba(0,0,0,.52);touch-action:none}
+.machine:before{content:"";position:absolute;inset:-32%;background:conic-gradient(from 0deg,transparent 0 12%,rgba(213,255,0,.09) 14%,transparent 18% 41%,rgba(72,226,255,.08) 45%,transparent 49% 72%,rgba(255,44,139,.08) 76%,transparent 81%);animation:halo 15s linear infinite;filter:blur(18px)}@keyframes halo{to{transform:rotate(360deg)}}
+#labCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:2}
+.readout{position:absolute;z-index:5;left:10px;bottom:10px;max-width:calc(100% - 20px);padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:rgba(8,4,13,.76);backdrop-filter:blur(10px);font:900 8px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em;color:#ddd2df;pointer-events:none}
+.actions{display:flex;gap:5px;flex-wrap:wrap}.actions button{min-height:38px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025);color:var(--ink);padding:0 11px;font:900 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.05em;cursor:pointer}.actions button:active,.mode:active{transform:scale(.97)}.actions button:hover{border-color:var(--acid);color:var(--acid)}
+.flash{position:absolute;z-index:8;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0;font:400 min(28vw,210px)/1 Georgia,serif;color:var(--acid);mix-blend-mode:screen}.flash.go{animation:flash .72s ease-out}@keyframes flash{0%{opacity:.8;transform:scale(.55) rotate(-8deg)}100%{opacity:0;transform:scale(1.35) rotate(10deg)}}
+@media(max-width:720px){.shell{grid-template-rows:auto auto minmax(0,1fr) auto}.mast{min-height:38px}.brand{font-size:clamp(23px,8vw,48px)}.meta{font-size:7px}.paramBar{grid-template-columns:1fr 1fr}.mode{min-height:32px;padding:0 8px}.actions button{flex:1 1 calc(50% - 5px)}.machine{border-radius:17px}}
+@media(orientation:landscape) and (max-height:620px){.shell{grid-template-columns:210px 1fr;grid-template-rows:auto 1fr auto}.mast{grid-column:1/3}.controls{grid-column:1}.machine{grid-column:2;grid-row:2/4}.actions{grid-column:1}.paramBar{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){.machine:before{animation:none}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="mast">
+    <div class="brand"><span>FALTAN AÚN</span><strong>PALABRAS</strong><span>POR LIBERAR</span></div>
+    <div class="meta">XR · CJGR · 2026</div>
+  </header>
+  <section class="controls" aria-label="Controles del generador">
+    <div class="modeBar" role="toolbar" aria-label="Modos">
+      <button class="mode active" type="button" data-mode="pos">POSIMAGEN</button>
+      <button class="mode" type="button" data-mode="int">INTERFERENCIA</button>
+      <button class="mode" type="button" data-mode="man">MANIFOLD</button>
+      <button class="mode" type="button" data-mode="pert">PERTURBACIÓN</button>
+      <button class="mode" type="button" data-mode="mem">MEMORIA</button>
+      <button class="mode" type="button" data-mode="loop">ACTIVE LOOP</button>
+      <button class="mode" type="button" data-mode="ren">ℛ / FUTUROS</button>
+      <button class="mode" type="button" data-mode="mix">MIX</button>
+    </div>
+    <div class="paramBar">
+      <label>SATURACIÓN <output id="outSat">78</output><input id="labSat" type="range" min="0" max="100" value="78"></label>
+      <label>PERSISTENCIA <output id="outMemory">62</output><input id="labMemory" type="range" min="0" max="100" value="62"></label>
+      <label>PERTURBACIÓN <output id="outPerturb">48</output><input id="labPerturb" type="range" min="0" max="100" value="48"></label>
+      <label>INTEGRACIÓN <output id="outIntegr">67</output><input id="labIntegr" type="range" min="0" max="100" value="67"></label>
+    </div>
+  </section>
+  <section class="machine" id="machine" aria-label="Campo generativo">
+    <canvas id="labCanvas"></canvas>
+    <div class="flash" id="flash">ℛ</div>
+    <div id="readout" class="readout" aria-live="polite">POSIMAGEN · VIVO</div>
+  </section>
+  <footer class="actions">
+    <button type="button" id="newState">NUEVO ESTADO</button>
+    <button type="button" id="pauseLab">PAUSA</button>
+    <button type="button" id="saveLab">GUARDAR IMAGEN</button>
+    <button type="button" id="shareLab">COMPARTIR</button>
+  </footer>
+</main>
+<script>
+(function(){
+'use strict';
+const machine=document.getElementById('machine'),canvas=document.getElementById('labCanvas');
+if(!machine||!canvas)return;
+const ctx=canvas.getContext('2d',{alpha:true});
+let dpr=Math.min(2,window.devicePixelRatio||1),W=2,H=2,paused=false,seed=Math.floor(Math.random()*1e9),frame=0,raf=0;
+const state={sat:78,memory:62,perturb:48,integr:67,px:.5,py:.5,mode:'pos',impulse:0};
+const controls={labSat:['sat','outSat'],labMemory:['memory','outMemory'],labPerturb:['perturb','outPerturb'],labIntegr:['integr','outIntegr']};
+Object.entries(controls).forEach(([id,[key,outId]])=>{const el=document.getElementById(id),out=document.getElementById(outId);if(el)el.addEventListener('input',()=>{state[key]=+el.value;if(out)out.textContent=el.value;});});
+function resize(){dpr=Math.min(2,window.devicePixelRatio||1);const r=machine.getBoundingClientRect();W=Math.max(2,Math.round(r.width*dpr));H=Math.max(2,Math.round(r.height*dpr));if(canvas.width!==W||canvas.height!==H){const snapshot=document.createElement('canvas');snapshot.width=canvas.width;snapshot.height=canvas.height;try{snapshot.getContext('2d').drawImage(canvas,0,0);}catch(_){}canvas.width=W;canvas.height=H;if(snapshot.width>2)ctx.drawImage(snapshot,0,0,W,H);}}
+function rng(n){const x=Math.sin((n+seed)*12.9898)*43758.5453;return x-Math.floor(x)}
+function clear(alpha){ctx.fillStyle=`rgba(8,4,13,${alpha})`;ctx.fillRect(0,0,W,H)}
+function dot(x,y,r,h,a=.8){ctx.beginPath();ctx.fillStyle=`hsla(${h},${Math.max(10,state.sat)}%,62%,${a})`;ctx.arc(x,y,r,0,Math.PI*2);ctx.fill()}
+function readout(){const labels={pos:'POSIMAGEN',int:'INTERFERENCIA',man:'MANIFOLD',pert:'PERTURBACIÓN',mem:'MEMORIA',loop:'ACTIVE LOOP',ren:'ℛ / FUTUROS',mix:'MIX'};document.getElementById('readout').textContent=`${labels[state.mode]} · S${String(seed).slice(-4)} · ${paused?'PAUSA':'VIVO'}`}
+function burst(){state.impulse=1;const f=document.getElementById('flash');f.classList.remove('go');void f.offsetWidth;f.classList.add('go')}
+function draw(t){resize();if(!paused){frame++;const memory=Math.max(.025,(100-state.memory)/100*.22);clear(memory);const cx=state.px*W,cy=state.py*H,p=state.perturb/100,i=state.integr/100;ctx.save();ctx.globalCompositeOperation='screen';
+if(state.mode==='pos'){for(let k=0;k<28;k++){const a=k/28*Math.PI*2+t*.00035;dot(cx+Math.cos(a)*(W*.08+k*W*.004),cy+Math.sin(a)*(H*.08+k*H*.003),Math.max(2,W*(.005+i*.004)),70+k*7+t*.02,.18+.45*i)}}
+else if(state.mode==='int'){ctx.lineWidth=Math.max(1,dpr);for(let k=0;k<44;k++){const rr=(k+1)*W*.012;ctx.strokeStyle=`hsla(${170+k*5+t*.015},${state.sat}%,62%,.23)`;ctx.beginPath();ctx.arc(W*.42,H*.5,rr,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(W*.58,H*.5,rr,0,Math.PI*2);ctx.stroke();}}
+else if(state.mode==='man'){for(let k=0;k<90;k++){const x=rng(k+frame*.02)*W,y=rng(k*3+17)*H,dx=cx-x,dy=cy-y;ctx.strokeStyle=`hsla(${230+k*2},${state.sat}%,60%,${.04+i*.10})`;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+dx*i*.25,y+dy*i*.25);ctx.stroke();dot(x,y,W*.004,75+k*4,.35)}}
+else if(state.mode==='pert'){for(let k=0;k<18;k++){const rr=((t*.08+k*55)%(W*.8));ctx.strokeStyle=`hsla(${335+k*9},${state.sat}%,62%,${.08+.3*(1-rr/(W*.8))})`;ctx.lineWidth=1+4*p;ctx.beginPath();ctx.ellipse(cx,cy,rr,rr*(.25+.8*i),0,0,Math.PI*2);ctx.stroke();}}
+else if(state.mode==='mem'){ctx.font=`900 ${Math.max(12,W*.035)}px ui-monospace,monospace`;ctx.textAlign='center';const words=['MEMORIA','PRESENTE','ANTICIPACIÓN','HUELLA','RETORNO'];for(let k=0;k<18;k++){ctx.fillStyle=`hsla(${260+k*11},${state.sat}%,70%,${.06+.28*state.memory/100})`;ctx.save();ctx.translate(W*.5,H*(k/17));ctx.rotate(Math.sin(t*.0003+k)*.18);ctx.fillText(words[k%words.length],Math.sin(t*.0005+k)*W*.17,0);ctx.restore();}}
+else if(state.mode==='loop'){for(let k=0;k<14;k++){const a=t*.0006*(1+k*.02)+k*.74,rr=W*(.08+.018*k);dot(W*.5+Math.cos(a)*rr,H*.5+Math.sin(a*1.3)*rr,W*(.012+.006*i),310+k*18,.55)}}
+else if(state.mode==='ren'){ctx.translate(W*.5,H*.5);ctx.rotate(t*.00012);ctx.font=`${Math.floor(W*(.24+.08*i))}px Georgia,serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=`hsla(${72+t*.015},${state.sat}%,58%,.24)`;ctx.fillText('ℛ',0,0);for(let k=0;k<52;k++){const a=k/52*Math.PI*2+t*.00015,rr=W*(.18+.11*Math.sin(k*2.7+t*.0003)*p);dot(Math.cos(a)*rr,Math.sin(a)*rr,W*.004,170+k*5,.38)}}
+else{for(let k=0;k<64;k++){const a=k*.618*Math.PI*2+t*.00023,rr=W*(.04+.006*k);dot(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr*(.65+i*.55),W*(.004+.006*p),45+k*9+t*.02,.16+.42*i)}}
+if(state.impulse>0){ctx.strokeStyle=`rgba(213,255,0,${state.impulse})`;ctx.lineWidth=2*dpr;ctx.beginPath();ctx.arc(cx,cy,W*(.04+.18*(1-state.impulse)),0,Math.PI*2);ctx.stroke();state.impulse*=.94}ctx.restore();}
+raf=requestAnimationFrame(draw)}
+function newState(){seed=Math.floor(Math.random()*1e9);burst();readout()}
+document.querySelectorAll('.mode').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.mode').forEach(x=>x.classList.remove('active'));btn.classList.add('active');state.mode=btn.dataset.mode||'mix';burst();readout();}));
+const pointers=new Map();let lastTap=0,pinch0=0,y0=0,integr0=0,mem0=0;
+machine.addEventListener('pointerdown',e=>{try{machine.setPointerCapture(e.pointerId)}catch(_){}pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});const now=performance.now();if(now-lastTap<330)newState();lastTap=now;if(pointers.size===2){const a=[...pointers.values()];pinch0=Math.hypot(a[1].x-a[0].x,a[1].y-a[0].y);y0=(a[0].y+a[1].y)/2;integr0=state.integr;mem0=state.memory;}});
+machine.addEventListener('pointermove',e=>{const r=machine.getBoundingClientRect();state.px=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));state.py=Math.max(0,Math.min(1,(e.clientY-r.top)/r.height));state.impulse=Math.max(state.impulse,.32);if(pointers.has(e.pointerId))pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size===2&&pinch0){const a=[...pointers.values()],d=Math.hypot(a[1].x-a[0].x,a[1].y-a[0].y),yy=(a[0].y+a[1].y)/2;state.integr=Math.max(0,Math.min(100,integr0+(d-pinch0)*.25));state.memory=Math.max(0,Math.min(100,mem0-(yy-y0)*.18));const ei=document.getElementById('labIntegr'),em=document.getElementById('labMemory'),oi=document.getElementById('outIntegr'),om=document.getElementById('outMemory');ei.value=Math.round(state.integr);em.value=Math.round(state.memory);oi.textContent=Math.round(state.integr);om.textContent=Math.round(state.memory);}});
+['pointerup','pointercancel','pointerleave'].forEach(ev=>machine.addEventListener(ev,e=>pointers.delete(e.pointerId)));
+document.getElementById('newState').addEventListener('click',newState);
+document.getElementById('pauseLab').addEventListener('click',e=>{paused=!paused;e.currentTarget.textContent=paused?'REANUDAR':'PAUSA';readout()});
+document.getElementById('saveLab').addEventListener('click',()=>{try{canvas.toBlob(blob=>{if(!blob)return;const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='FALTAN_PALABRAS_XR_'+String(seed).slice(-6)+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)},'image/png')}catch(_){const a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download='FALTAN_PALABRAS_XR_'+String(seed).slice(-6)+'.png';a.click()}});
+document.getElementById('shareLab').addEventListener('click',async()=>{const payload={title:'FALTAN AÚN PALABRAS POR LIBERAR · XR',text:`XR · estado ${String(seed).slice(-6)} · CJGR · 2026`};try{if(navigator.share)await navigator.share(payload);else if(navigator.clipboard){await navigator.clipboard.writeText(payload.text);document.getElementById('readout').textContent='ESTADO COPIADO'}}catch(_){}});
+window.addEventListener('resize',resize,{passive:true});
+readout();resize();cancelAnimationFrame(raf);requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
